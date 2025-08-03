@@ -50,3 +50,82 @@ function reverseInPlace(arr){
 }
 
 //reverseInPlace([10, 20, 30, 40, 50])
+
+// 05. Phone Book
+
+function phoneBook(input){
+    let phoneBook = {}
+
+    for (const element of input) {
+        let currentElement = element.split(' ')
+
+        let key = currentElement[0]   // името
+        let value = currentElement[1] // телефонния номер
+
+        phoneBook[key] = value
+    }
+
+    for (const key in phoneBook) {
+        console.log(`${key} -> ${phoneBook[key]}`)
+    }
+}
+
+// phoneBook(['Tim 0834212554',
+//  'Peter 0877547887',
+//  'Bill 0896543112',
+//  'Tim 0876566344']
+// )
+
+// 06. Meetings
+
+function meetings(inputArr){
+
+    let meetings = {}
+
+    for (const element of inputArr) {
+        let [weekday, name] = element.split(' ')
+
+        if(meetings.hasOwnProperty(weekday)){
+            console.log(`Conflict on ${weekday}!`)
+        } else {
+            meetings[weekday] = name
+
+            console.log(`Scheduled for ${weekday}`)
+        }
+    }
+
+    for (const key in meetings) {
+        console.log(`${key} -> ${meetings[key]}`)
+    }
+}
+
+// meetings(['Monday Peter',
+//  'Wednesday Bill',
+//  'Monday Tim',
+//  'Friday Tim']
+// )
+
+// 07. Address Book
+
+function addressBook(inpurArr){
+    let addressBook = {}
+
+    for (const element of inpurArr) {
+        let [name, address] = element.split(':')
+
+        addressBook[name] = address 
+    }
+
+    // Сортораме по ключ (името)
+    let sortedAddressBook = Object.entries(addressBook).sort((a,b) => a[0].localeCompare(b[0]))
+
+    for (const [key, value] of sortedAddressBook) {
+        console.log(`${key} -> ${value}`)
+    }
+}
+
+// addressBook(['Tim:Doe Crossing',
+//  'Bill:Nelson Place',
+//  'Peter:Carlyle Ave',
+//  'Bill:Ornery Rd']
+// )
