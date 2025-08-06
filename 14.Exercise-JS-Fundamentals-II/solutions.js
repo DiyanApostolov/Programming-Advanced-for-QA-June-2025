@@ -69,9 +69,9 @@ function storeProvision (currentStock, orderedProducts){
         let quantity = Number(orderedProducts[i+1])
         
         if(store.hasOwnProperty(productName)){
-            store[productName] += quantity  // добавяме стойност към съществуващ ключ
+            store[productName] += quantity  // увеличаваме стойност към съществуващ ключ
         } else {
-            store[productName] = quantity  // добавяме нов продукт (ключ) в асоциативния масив
+            store[productName] = quantity  // добавяме нов продукт (ключ) в асоциативния масив и стойност срещу него
         }
     }
 
@@ -96,15 +96,15 @@ function movies (inpurArr){
         if (commandLine.startsWith('addMovie')){
 
             let movieName = commandLine.substring(9)
-            allMovies.push({'name': movieName}) // добавям абект {} в масива с едно пропърти name
+            allMovies.push({'name': movieName}) // добавяме обект {} в масива с едно пропърти name
 
         } else if (commandLine.includes('directedBy')) {
             let [movieName, directorName] = commandLine.split(' directedBy ')
 
-            let movie = allMovies.find(m => m.name === movieName) // търся дали има филм с такова име
+            let movie = allMovies.find(m => m.name === movieName) // търсим дали има филм с такова име
 
             if(movie) {
-                movie.director = directorName // добавям ново пропърти director и стойност срещу него
+                movie.director = directorName // добавяме ново пропърти director и стойност срещу него
             }
         } else if (commandLine.includes('onDate')){
             let [movieName, movieDate] = commandLine.split(' onDate ')
@@ -112,7 +112,7 @@ function movies (inpurArr){
             let movie = allMovies.find(m => m.name === movieName)
 
             if(movie){
-                movie.date = movieDate // добавям ново пропърти date и стойност срещу него
+                movie.date = movieDate // добавяме ново пропърти date и стойност срещу него
             }
         }
     }
@@ -168,7 +168,7 @@ function charactersInRange(a, b){
     let chars = []
 
     for (let i = start + 1; i < end; i++) {
-        chars.push(String.fromCharCode(i)) // обръщаме от десетично число в string (char)   
+        chars.push(String.fromCharCode(i)) // обръщаме от десетично число в string   
     }
 
     console.log(chars.join(' '))
@@ -230,7 +230,7 @@ function perfectNumber(num){
     let result = 0;
 
     for (let i = 1; i < num; i++) {
-        if (num % i === 0){ // намирам делител без остатък
+        if (num % i === 0){ // намираме делител без остатък
             result += i
         } 
     }
