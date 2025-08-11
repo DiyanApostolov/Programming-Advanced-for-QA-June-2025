@@ -1,0 +1,17 @@
+{
+  "name": "01.even-or-odd",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "isOddOrEven.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "DA",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^5.2.1",
+    "mocha": "^11.7.1"
+  }
+}
